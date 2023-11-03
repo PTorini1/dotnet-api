@@ -1,11 +1,13 @@
-﻿using dotnet_api.Models;
+﻿using dotnet_api.Dtos.Character;
+using dotnet_api.Models;
 
 namespace dotnet_api.Services.CharacterService
 {
     public interface ICharacterService
     {
-        List<Character> GetAllCharacters();
-        Character GetCharacterById(int id);
-        List<Character> AddCharacter(Character newCharacter);
+        Task<ServiceResponse<List<GetCharacterDto>>> GetAllCharacters();
+        Task<ServiceResponse<GetCharacterDto>> GetCharacterById(int id);
+        Task<ServiceResponse<List<GetCharacterDto>>> AddCharacter(AddCharacterDto newCharacter);
+        Task<ServiceResponse<GetCharacterDto>> UpdateCharacter(UpdateCharacterDto updateCharacter);
     }
 }
