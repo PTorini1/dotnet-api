@@ -10,6 +10,6 @@ namespace dotnet_api.Data
         
         }
 
-        public DbSet<Character> Character => Set<Character>();
+        public DbSet<Character> Characters => Set<Character>();
     }
 }
